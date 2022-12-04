@@ -37,6 +37,7 @@ jobs:
         with:
           bump_version_scheme: minor
           tag_prefix: v
+          release_body: false
       
       - name: check output params
         run: |
