@@ -30,14 +30,24 @@ jobs:
                   
 
       - name: create release
-        uses: actions/create-release@v1
+        uses:  rymndhng/release-on-push-action@master
+        id: release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.release_tag }}
-          release_name: Release ${{ env.release_tag }}
-          prerelease: false
-          draft: false
+          bump_version_scheme: minor
+          tag_prefix: v
+      
+      - name: check output params
+        run: |
+          echo "Got tag name ${{ steps.release.outputs.tag_name }}"
+          echo "Got release version ${{ steps.release.outputs.version }}"
+      
+       
+          # tag_name: ${{ env.release_tag }}
+          # release_name: Release ${{ env.release_tag }}
+          # prerelease: false
+          # draft: false
           
           #artifacts: outp.zip
       
