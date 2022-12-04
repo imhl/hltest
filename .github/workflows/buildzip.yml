@@ -38,7 +38,7 @@ jobs:
           release_name: Release ${{ env.release_tag }}
           prerelease: false
           draft: false
-          body_path: outp.zip
+          
           #artifacts: outp.zip
       
           #files: "dist/suss-0.0.1.tar.gz"
