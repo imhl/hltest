@@ -31,20 +31,14 @@ jobs:
                   
 
       - name: create release
-        uses:  rymndhng/release-on-push-action@master
-        id: release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: marvinpinto/action-automatic-releases@latest
         with:
-          bump_version_scheme: minor
-          tag_prefix: v
+          files: "outp.zip"
+          automatic_release_tag: "latest"
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
           
-      
-      - name: check output params
-        run: |
-          echo "Got tag name ${{ steps.release.outputs.tag_name }}"
-          echo "Got release version ${{ steps.release.outputs.version }}"
-      
+    
        
           # tag_name: ${{ env.release_tag }}
           # release_name: Release ${{ env.release_tag }}
