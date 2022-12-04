@@ -17,7 +17,8 @@ jobs:
       
       - name: install package dependencies
         run: |
-          zip -R outp.zip printdir.py
+          echo "hellworld" > test1.txt
+          zip -R outp.zip printdir.py test1.txt
 
       - name: run python code
         run: |
