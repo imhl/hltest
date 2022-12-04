@@ -38,6 +38,7 @@ jobs:
         with:
           bump_version_scheme: patch
           tag_prefix: v
+          release_name: v1.0.0
           
       
       - name: check output params
