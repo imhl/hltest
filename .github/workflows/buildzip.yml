@@ -35,8 +35,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          bump_version_scheme: norelease
-        
+          bump_version_scheme: patch
+          tag_prefix: v
+          
       
       - name: check output params
         run: |
